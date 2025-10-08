@@ -1,0 +1,10 @@
+UTS Praktikum:
+Buat class diagram (UML) dengan 5 class.
+Implementasikan 5 class diagram yang telah anda buat.
+
+Catatan:
+Semakin banyak penggunaan/implementasi hierarchy arrow dalam diagram, semakin baik pula nilai tugas UTS yang diperoleh.
+
+Tugas:
+Uml dikumpulkan di ethol.
+Demo dilakukan minggu selanjutnya.

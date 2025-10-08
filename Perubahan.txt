@@ -1,0 +1,5 @@
+1. Mengubah nama class Character -> Player
+	Reason: Conflict dengan java.lang.Character.
+2. Mengubah nama method getBaseArmor() -> getBaseDefense.
+3. Memperbaiki kesalahan nama variabel parameter di konstruktor class Enemy.
+4. Pada class Weapon dan Armor, menambahkan overloading construct untuk memperbaiki input variabel 'type' dan 'rarity' (dari parent)
