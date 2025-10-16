@@ -135,6 +135,8 @@ public class Main {
 		System.out.println("You, " + YELLOW + player.getName() + RESET + ", the famous adventurer, rushes in.");
 
 		System.out.println("\nBut only after a few steps in, your challenge appears...");
+
+		delayOutput(5000);
 	}
 
 	// Pls dont talk about balancing.
@@ -162,12 +164,14 @@ public class Main {
 		// Selama health tidak habis, battle berlanjut
 		BattleTurns:
 		while(!(player.getHealth() <= 0)){
+			delayOutput(1000);
+			
 			System.out.printf(YELLOW + "%15s" + RESET + "%15s" + RED + "%20s" + RESET + "\n", player.getName(), "vs.", enemy.getName());
 			System.out.printf("%3s HP %3s DEF %3s ATK %10s %3s HP %3s DEF %3s ATK\n\n", player.getHealth(), player.getDefense(), player.getAttack(), "", enemy.getHealth(), enemy.getDefense(), enemy.getAttack());
 
-			System.out.println("+- Your Turn! ---------------------------+");
-			System.out.println("| (1) Attack\t(2) Heal\t(3) Flee |");
-			System.out.println("+- Choose one option: -------------------+");
+			System.out.println("+- Your Turn! ---------------------------------+");
+			System.out.println("| (1) Attack   (2) Heal   (3) Flee   (4) Stats |");
+			System.out.println("+- Choose one option: -------------------------+");
 
 			int action = sc.nextInt();
 			System.out.println("");
@@ -230,6 +234,10 @@ public class Main {
 					}
 					break;
 
+				case 4:
+					player.info();
+					continue;
+
 				default:
 					System.out.println("\nYou shouted: ");
 					player.chat("SHAWWW!");
@@ -238,14 +246,7 @@ public class Main {
 
 			System.out.println("");
 
-			// Output gap biar gampang dibaca (tidak original, credit: Baeldung)
-			/*
-			try {
-				Thread.sleep(3000);
-			} catch(InterruptedException e){
-				Thread.currentThread().interrupt();	
-			}
-			*/
+			delayOutput(1000);
 
 			// Enemy's Turn!
 			System.out.println(enemy.getName() + "'s turn!");
@@ -330,6 +331,14 @@ public class Main {
 			System.out.println(GREEN + "\nCongratulation! You've made it out alive!" + RESET + "\nTHE END");
 		} else {
 			System.out.println(RED + "YOU DIED\nThe End." + RESET);
+		}
+	}
+
+	public static void delayOutput(int time){
+		try {
+			Thread.sleep(time);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
 	}
 }

@@ -32,14 +32,14 @@ public class Player extends Entity {
 	}
 
 	public void setArmor(Armor armor){
-		this.defense -= this.armor.getModifier();
+		this.defense -= this.armor != null ? this.armor.getModifier() : 0;
 
 		this.armor = armor;
 		this.defense += armor.getModifier();
 	}
 
 	public void setWeapon(Weapon weapon){
-		this.attack -= this.weapon.getModifier();
+		this.attack -= this.weapon != null ? this.weapon.getModifier() : 0;
 
 		this.weapon = weapon;
 		this.attack += weapon.getModifier();
